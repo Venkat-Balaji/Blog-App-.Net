@@ -1,41 +1,46 @@
 ﻿@page "/register"
-@inject ClientBlog.Services.SupabaseService Supabase
-@inject NavigationManager Nav
+@using ClientBlog.Services;
 
-<h3>Register</h3>
+@inject AuthService AuthService
+@inject NavigationManager NavigationManager
 
-<div>
-    <input @bind="email" placeholder="Email" />
-    <input @bind="password" type="password" placeholder="Password" />
-    <button @onclick="RegisterUser">Register</button>
-</div>
+<h3 class="text-center text-primary">Register</h3>
 
-<p>
-    Already have an account? <a href="/login">Login here</a>
-</p>
-
-@if (registrationError)
+@if (!string.IsNullOrEmpty(Message))
 {
-    <p style="color: red;">Registration failed. Please try again.</p>
+    <div class="alert alert-info">@Message</div>
 }
 
+<EditForm Model="user" OnValidSubmit="HandleRegister">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label>Email:</label>
+        <InputText @bind-Value="user.Email" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Password:</label>
+        <InputText @bind-Value="user.Password" type="password" class="form-control" />
+    </div>
+
+    <button class="btn btn-success" type="submit">Register</button>
+</EditForm>
+
 @code {
-    private string email;
-    private string password;
-    private bool registrationError = false;
+    private ClientBlog.Models.User user = new();
+    private string Message = "";
 
-    private async Task RegisterUser()
+    private async Task HandleRegister()
     {
-        registrationError = false; // Reset error
+        var result = await AuthService.Register(user);
 
-        var success = await Supabase.Register(email, password);
-        if (success)
+        Message = result;
+
+        if (result.Contains("successful"))
         {
-            Nav.NavigateTo("/login");
-        }
-        else
-        {
-            registrationError = true; // Show error if registration fails
+            NavigationManager.NavigateTo("/login");
         }
     }
 }

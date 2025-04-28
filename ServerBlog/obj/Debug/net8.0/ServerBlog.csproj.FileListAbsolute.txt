@@ -51,3 +51,4 @@ E:\WiseWork\BlogApp\ServerBlog\obj\Debug\net8.0\refint\ServerBlog.dll
 E:\WiseWork\BlogApp\ServerBlog\obj\Debug\net8.0\ServerBlog.pdb
 E:\WiseWork\BlogApp\ServerBlog\obj\Debug\net8.0\ServerBlog.genruntimeconfig.cache
 E:\WiseWork\BlogApp\ServerBlog\obj\Debug\net8.0\ref\ServerBlog.dll
+E:\WiseWork\BlogApp\ServerBlog\obj\Debug\net8.0\ServerBlog.sourcelink.json

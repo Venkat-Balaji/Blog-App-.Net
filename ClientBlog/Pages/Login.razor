@@ -1,41 +1,48 @@
 ﻿@page "/login"
-@inject ClientBlog.Services.SupabaseService Supabase
-@inject NavigationManager Nav
+@using ClientBlog.Services;
+@inject AuthService AuthService
+@inject NavigationManager NavigationManager
 
-<h3>Login</h3>
+<h3 class="text-center text-primary">Login</h3>
 
-<div>
-    <input @bind="email" placeholder="Email" />
-    <input @bind="password" type="password" placeholder="Password" />
-    <button @onclick="LoginUser">Login</button>
-</div>
-
-<p>
-    Don't have an account? <a href="/register">Register here</a>
-</p>
-
-@if (loginError)
+@if (!string.IsNullOrEmpty(Message))
 {
-    <p style="color: red;">Login failed. Please check your credentials.</p>
+    <div class="alert alert-info">@Message</div>
 }
 
+<EditForm Model="user" OnValidSubmit="HandleLogin">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label>Email:</label>
+        <InputText @bind-Value="user.Email" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Password:</label>
+        <InputText @bind-Value="user.Password" type="password" class="form-control" />
+    </div>
+
+    <button class="btn btn-primary" type="submit">Login</button>
+</EditForm>
+
 @code {
-    private string email;
-    private string password;
-    private bool loginError = false;
+    private ClientBlog.Models.User user = new();
+    private string Message = "";
 
-    private async Task LoginUser()
+    private async Task HandleLogin()
     {
-        loginError = false;  // Reset error
+        var token = await AuthService.Login(user);
 
-        var success = await Supabase.Login(email, password);
-        if (success)
+        if (token.Length > 100) // If token is large, assume success
         {
-            Nav.NavigateTo("/posts");
+            Message = "Login Successful!";
+            NavigationManager.NavigateTo("/");
         }
         else
         {
-            loginError = true;  // Show error if login fails
+            Message = token;
         }
     }
 }

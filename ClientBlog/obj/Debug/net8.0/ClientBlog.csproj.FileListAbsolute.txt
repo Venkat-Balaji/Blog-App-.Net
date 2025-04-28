@@ -1119,6 +1119,7 @@ E:\WiseWork\BlogApp\ClientBlog\obj\Debug\net8.0\ClientBlog.dll
 E:\WiseWork\BlogApp\ClientBlog\obj\Debug\net8.0\refint\ClientBlog.dll
 E:\WiseWork\BlogApp\ClientBlog\obj\Debug\net8.0\ClientBlog.pdb
 E:\WiseWork\BlogApp\ClientBlog\obj\Debug\net8.0\ref\ClientBlog.dll
-E:\WiseWork\BlogApp\ClientBlog\obj\Debug\net8.0\compressed\dekyl7cpxy-x7tgkw6u2y.gz
-E:\WiseWork\BlogApp\ClientBlog\obj\Debug\net8.0\compressed\6ddf7bvsgh-autvipvj93.gz
-E:\WiseWork\BlogApp\ClientBlog\obj\Debug\net8.0\compressed\a01r0txo9c-9eeppcawav.gz
+E:\WiseWork\BlogApp\ClientBlog\obj\Debug\net8.0\ClientBlog.sourcelink.json
+E:\WiseWork\BlogApp\ClientBlog\obj\Debug\net8.0\compressed\dekyl7cpxy-j5dhypw1ql.gz
+E:\WiseWork\BlogApp\ClientBlog\obj\Debug\net8.0\compressed\6ddf7bvsgh-yiqr4prfyx.gz
+E:\WiseWork\BlogApp\ClientBlog\obj\Debug\net8.0\compressed\a01r0txo9c-klsm103g0s.gz

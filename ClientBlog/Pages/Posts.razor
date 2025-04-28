@@ -1,7 +1,5 @@
 ﻿@page "/posts"
 @inject HttpClient Http
-@inject ClientBlog.Services.SupabaseService Supabase
-@inject NavigationManager Nav
 
 <h3>My Posts</h3>
 
@@ -20,59 +18,37 @@ else
     }
 }
 
-@if (IsLoggedIn)
-{
-    <input @bind="newTitle" placeholder="Title" />
-    <textarea @bind="newContent" placeholder="Content"></textarea>
-    <button @onclick="CreatePost">Post</button>
-}
-else
-{
-    <p>Please log in to create a post.</p>
-}
+<input @bind="newTitle" placeholder="Title" />
+<textarea @bind="newContent" placeholder="Content"></textarea>
+<button @onclick="CreatePost">Post</button>
 
 @code {
     private List<Post>? posts;
     private string newTitle;
     private string newContent;
 
-    private bool IsLoggedIn => !string.IsNullOrEmpty(Supabase.GetToken());
-
-    // Fetch posts on component load
+    // Fetch posts after login
     protected override async Task OnInitializedAsync()
     {
-        var token = Supabase.GetToken();
-        if (!string.IsNullOrEmpty(token))
-        {
-            Http.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-        }
-
-        posts = await Http.GetFromJsonAsync<List<Post>>("https://localhost:5000/api/posts");
+        posts = await Http.GetFromJsonAsync<List<Post>>("/api/posts");
     }
 
-    // Send new post data to API and refresh post list
     private async Task CreatePost()
     {
-        if (string.IsNullOrEmpty(newTitle) || string.IsNullOrEmpty(newContent))
-        {
-            return;
-        }
+        var post = new { Title = newTitle, Content = newContent };
 
-        var post = new Post { Title = newTitle, Content = newContent };
-        var response = await Http.PostAsJsonAsync("https://localhost:5000/api/posts", post);
+        await Http.PostAsJsonAsync("/api/posts", post);
 
-        if (response.IsSuccessStatusCode)
-        {
-            newTitle = newContent = string.Empty; // Clear the form
-            await OnInitializedAsync(); // Reload posts
-        }
+        newTitle = newContent = string.Empty;
+
+        // Reload the posts
+        await OnInitializedAsync();
     }
 
-    // Post model
     public class Post
     {
         public int Id { get; set; }
-        public string Title { get; set; }
-        public string Content { get; set; }
+        public string? Title { get; set; }
+        public string? Content { get; set; }
     }
 }
