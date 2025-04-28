@@ -1,0 +1,41 @@
+﻿@page "/register"
+@inject ClientBlog.Services.SupabaseService Supabase
+@inject NavigationManager Nav
+
+<h3>Register</h3>
+
+<div>
+    <input @bind="email" placeholder="Email" />
+    <input @bind="password" type="password" placeholder="Password" />
+    <button @onclick="RegisterUser">Register</button>
+</div>
+
+<p>
+    Already have an account? <a href="/login">Login here</a>
+</p>
+
+@if (registrationError)
+{
+    <p style="color: red;">Registration failed. Please try again.</p>
+}
+
+@code {
+    private string email;
+    private string password;
+    private bool registrationError = false;
+
+    private async Task RegisterUser()
+    {
+        registrationError = false; // Reset error
+
+        var success = await Supabase.Register(email, password);
+        if (success)
+        {
+            Nav.NavigateTo("/login");
+        }
+        else
+        {
+            registrationError = true; // Show error if registration fails
+        }
+    }
+}

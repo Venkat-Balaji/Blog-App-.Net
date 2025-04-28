@@ -1,0 +1,30 @@
+.main-layout {
+    font-family: 'Segoe UI', sans-serif;
+    padding: 0;
+}
+
+header {
+    background-color: #24292e;
+    color: white;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    nav a {
+        color: white;
+        margin: 0 1rem;
+        text-decoration: none;
+    }
+
+    nav button {
+        background: #f05454;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+    }

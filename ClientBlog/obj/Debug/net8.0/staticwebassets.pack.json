@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\WiseWork\\BlogApp\\ClientBlog\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\scopedcss\\bundle\\ClientBlog.styles.css",
+      "PackagePath": "staticwebassets\\ClientBlog.styles.css"
+    },
+    {
+      "Id": "E:\\WiseWork\\BlogApp\\ClientBlog\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "E:\\WiseWork\\BlogApp\\ClientBlog\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\WiseWork\\BlogApp\\ClientBlog\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "E:\\WiseWork\\BlogApp\\ClientBlog\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "E:\\WiseWork\\BlogApp\\ClientBlog\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "E:\\WiseWork\\BlogApp\\ClientBlog\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "E:\\WiseWork\\BlogApp\\ClientBlog\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ClientBlog.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ClientBlog.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ClientBlog.props",
+      "PackagePath": "build\\ClientBlog.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ClientBlog.props",
+      "PackagePath": "buildMultiTargeting\\ClientBlog.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ClientBlog.props",
+      "PackagePath": "buildTransitive\\ClientBlog.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

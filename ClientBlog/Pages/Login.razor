@@ -1,0 +1,41 @@
+﻿@page "/login"
+@inject ClientBlog.Services.SupabaseService Supabase
+@inject NavigationManager Nav
+
+<h3>Login</h3>
+
+<div>
+    <input @bind="email" placeholder="Email" />
+    <input @bind="password" type="password" placeholder="Password" />
+    <button @onclick="LoginUser">Login</button>
+</div>
+
+<p>
+    Don't have an account? <a href="/register">Register here</a>
+</p>
+
+@if (loginError)
+{
+    <p style="color: red;">Login failed. Please check your credentials.</p>
+}
+
+@code {
+    private string email;
+    private string password;
+    private bool loginError = false;
+
+    private async Task LoginUser()
+    {
+        loginError = false;  // Reset error
+
+        var success = await Supabase.Login(email, password);
+        if (success)
+        {
+            Nav.NavigateTo("/posts");
+        }
+        else
+        {
+            loginError = true;  // Show error if login fails
+        }
+    }
+}
