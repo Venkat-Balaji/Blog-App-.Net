@@ -17,7 +17,8 @@ namespace ServerBlog.Models
 
         [BsonElement("passwordHash")]
         public string PasswordHash { get; set; } = string.Empty;
-        public string Password { get; set; }  // Make sure this is defined
 
+        [BsonIgnore]
+        public string Password { get; set; } = string.Empty; // Only used in memory
     }
 }

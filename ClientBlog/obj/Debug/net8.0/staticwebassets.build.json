@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UVOTPyUj1d/Jq8lY2GiktppCNfjAAOsA2OSKxgu6PN4=",
+  "Hash": "V8AWNMFXTjwkHXGMANnciHBWj54YI/0W95xag+ICL9A=",
   "Source": "ClientBlog",
   "BasePath": "/",
   "Mode": "Root",
@@ -31,8 +31,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "manifest",
-      "Fingerprint": "klsm103g0s",
-      "Integrity": "uPRElqonidf0UgLoJ16h0DNpvhR3m+6FpXw85s2lIFE=",
+      "Fingerprint": "x1gt486fav",
+      "Integrity": "e0VJIKfXmtD9qWz5Z/LPIJv5W3iHrfEGV2OySnIA96Q=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net8.0\\blazor.boot.json"
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "symbol",
-      "Fingerprint": "yiqr4prfyx",
-      "Integrity": "9kjZozA+8vb25zXTROC6uR+e08IF96Vyghn0R4LaNl0=",
+      "Fingerprint": "0nf130i5yj",
+      "Integrity": "bEhCB5fk0X4IbYs6lrP4OctwVrTYG63U28Zc3ot+m3s=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net8.0\\ClientBlog.pdb"
@@ -94,8 +94,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "WasmResource",
       "AssetTraitValue": "runtime",
-      "Fingerprint": "j5dhypw1ql",
-      "Integrity": "Kf1zioyXAa7uijzjF/7Pfxju1eX9ryQ+RVus7dtoeow=",
+      "Fingerprint": "cgkg681c1c",
+      "Integrity": "jMF1eIW5528PjqwTCMpZW6gWY7XBvtviG30qnZyI85w=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\webcil\\ClientBlog.wasm"
@@ -5351,7 +5351,7 @@
       "OriginalItemSpec": "E:\\WiseWork\\BlogApp\\ClientBlog\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.js"
     },
     {
-      "Identity": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\6ddf7bvsgh-yiqr4prfyx.gz",
+      "Identity": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\6ddf7bvsgh-0nf130i5yj.gz",
       "SourceId": "ClientBlog",
       "SourceType": "Computed",
       "ContentRoot": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\",
@@ -5365,8 +5365,8 @@
       "RelatedAsset": "E:\\WiseWork\\BlogApp\\ClientBlog\\bin\\Debug\\net8.0\\wwwroot\\_framework\\ClientBlog.pdb",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "3zbhi70348",
-      "Integrity": "3+Qy1nHzQEED/VR50M+IyL+OvU27kcUwXw0+q6qDOug=",
+      "Fingerprint": "vdct5ovc62",
+      "Integrity": "81jA4iLNMaUvXLSAcosJ3nxrsd0mk6G57j7jsm/gZj8=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "E:\\WiseWork\\BlogApp\\ClientBlog\\bin\\Debug\\net8.0\\wwwroot\\_framework\\ClientBlog.pdb"
@@ -5813,7 +5813,7 @@
       "OriginalItemSpec": "E:\\WiseWork\\BlogApp\\ClientBlog\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Text.Json.wasm"
     },
     {
-      "Identity": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\a01r0txo9c-klsm103g0s.gz",
+      "Identity": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\a01r0txo9c-x1gt486fav.gz",
       "SourceId": "ClientBlog",
       "SourceType": "Computed",
       "ContentRoot": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\",
@@ -5827,8 +5827,8 @@
       "RelatedAsset": "E:\\WiseWork\\BlogApp\\ClientBlog\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.boot.json",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "617s5jwhr0",
-      "Integrity": "ZlxSYHT63VLHlnZ1VeVBXIzQNQucglBr87aif7XdCQ4=",
+      "Fingerprint": "zzryotfcqe",
+      "Integrity": "waHMrPXJOaPoWOWcK5CBomczu5jp6wOPDqF4RIlVnZM=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "E:\\WiseWork\\BlogApp\\ClientBlog\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.boot.json"
@@ -6212,7 +6212,7 @@
       "OriginalItemSpec": "E:\\WiseWork\\BlogApp\\ClientBlog\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat"
     },
     {
-      "Identity": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\dekyl7cpxy-j5dhypw1ql.gz",
+      "Identity": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\dekyl7cpxy-cgkg681c1c.gz",
       "SourceId": "ClientBlog",
       "SourceType": "Computed",
       "ContentRoot": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\",
@@ -6226,8 +6226,8 @@
       "RelatedAsset": "E:\\WiseWork\\BlogApp\\ClientBlog\\bin\\Debug\\net8.0\\wwwroot\\_framework\\ClientBlog.wasm",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "cd4ofxr9x7",
-      "Integrity": "4FALTRmRY0bOI/KkfxOOf4obE/ltkkJvn2dDzuiBhdY=",
+      "Fingerprint": "zc1scr36v8",
+      "Integrity": "HYJHxwwFLECKJF7MPnBvXGctwFRX4j6xXmlu/yW1Prc=",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "E:\\WiseWork\\BlogApp\\ClientBlog\\bin\\Debug\\net8.0\\wwwroot\\_framework\\ClientBlog.wasm"
@@ -9550,11 +9550,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"uPRElqonidf0UgLoJ16h0DNpvhR3m+6FpXw85s2lIFE=\""
+          "Value": "\"e0VJIKfXmtD9qWz5Z/LPIJv5W3iHrfEGV2OySnIA96Q=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 10:58:17 GMT"
+          "Value": "Tue, 29 Apr 2025 07:03:08 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9564,18 +9564,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-uPRElqonidf0UgLoJ16h0DNpvhR3m+6FpXw85s2lIFE="
+          "Value": "sha256-e0VJIKfXmtD9qWz5Z/LPIJv5W3iHrfEGV2OySnIA96Q="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json",
-      "AssetFile": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\a01r0txo9c-klsm103g0s.gz",
+      "AssetFile": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\a01r0txo9c-x1gt486fav.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000104580632"
+          "Quality": "0.000104591570"
         }
       ],
       "ResponseHeaders": [
@@ -9585,15 +9585,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "9561"
+          "Value": "9560"
         },
         {
           "Name": "ETag",
-          "Value": "\"ZlxSYHT63VLHlnZ1VeVBXIzQNQucglBr87aif7XdCQ4=\""
+          "Value": "\"waHMrPXJOaPoWOWcK5CBomczu5jp6wOPDqF4RIlVnZM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 10:21:10 GMT"
+          "Value": "Tue, 29 Apr 2025 06:58:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9613,19 +9613,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"uPRElqonidf0UgLoJ16h0DNpvhR3m+6FpXw85s2lIFE=\""
+          "Value": "W/\"e0VJIKfXmtD9qWz5Z/LPIJv5W3iHrfEGV2OySnIA96Q=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-uPRElqonidf0UgLoJ16h0DNpvhR3m+6FpXw85s2lIFE="
+          "Value": "sha256-e0VJIKfXmtD9qWz5Z/LPIJv5W3iHrfEGV2OySnIA96Q="
         }
       ]
     },
     {
       "Route": "_framework/blazor.boot.json.gz",
-      "AssetFile": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\a01r0txo9c-klsm103g0s.gz",
+      "AssetFile": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\a01r0txo9c-x1gt486fav.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9634,7 +9634,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "9561"
+          "Value": "9560"
         },
         {
           "Name": "Content-Type",
@@ -9642,11 +9642,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZlxSYHT63VLHlnZ1VeVBXIzQNQucglBr87aif7XdCQ4=\""
+          "Value": "\"waHMrPXJOaPoWOWcK5CBomczu5jp6wOPDqF4RIlVnZM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 10:21:10 GMT"
+          "Value": "Tue, 29 Apr 2025 06:58:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9664,7 +9664,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ZlxSYHT63VLHlnZ1VeVBXIzQNQucglBr87aif7XdCQ4="
+          "Value": "sha256-waHMrPXJOaPoWOWcK5CBomczu5jp6wOPDqF4RIlVnZM="
         }
       ]
     },
@@ -9816,7 +9816,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "30136"
+          "Value": "30140"
         },
         {
           "Name": "Content-Type",
@@ -9824,11 +9824,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"9kjZozA+8vb25zXTROC6uR+e08IF96Vyghn0R4LaNl0=\""
+          "Value": "\"bEhCB5fk0X4IbYs6lrP4OctwVrTYG63U28Zc3ot+m3s=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 10:58:16 GMT"
+          "Value": "Tue, 29 Apr 2025 07:03:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9838,18 +9838,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-9kjZozA+8vb25zXTROC6uR+e08IF96Vyghn0R4LaNl0="
+          "Value": "sha256-bEhCB5fk0X4IbYs6lrP4OctwVrTYG63U28Zc3ot+m3s="
         }
       ]
     },
     {
       "Route": "_framework/ClientBlog.pdb",
-      "AssetFile": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\6ddf7bvsgh-yiqr4prfyx.gz",
+      "AssetFile": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\6ddf7bvsgh-0nf130i5yj.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000046110573"
+          "Quality": "0.000045854732"
         }
       ],
       "ResponseHeaders": [
@@ -9859,15 +9859,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "21686"
+          "Value": "21807"
         },
         {
           "Name": "ETag",
-          "Value": "\"3+Qy1nHzQEED/VR50M+IyL+OvU27kcUwXw0+q6qDOug=\""
+          "Value": "\"81jA4iLNMaUvXLSAcosJ3nxrsd0mk6G57j7jsm/gZj8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 10:21:09 GMT"
+          "Value": "Tue, 29 Apr 2025 06:58:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9887,19 +9887,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"9kjZozA+8vb25zXTROC6uR+e08IF96Vyghn0R4LaNl0=\""
+          "Value": "W/\"bEhCB5fk0X4IbYs6lrP4OctwVrTYG63U28Zc3ot+m3s=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-9kjZozA+8vb25zXTROC6uR+e08IF96Vyghn0R4LaNl0="
+          "Value": "sha256-bEhCB5fk0X4IbYs6lrP4OctwVrTYG63U28Zc3ot+m3s="
         }
       ]
     },
     {
       "Route": "_framework/ClientBlog.pdb.gz",
-      "AssetFile": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\6ddf7bvsgh-yiqr4prfyx.gz",
+      "AssetFile": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\6ddf7bvsgh-0nf130i5yj.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -9908,7 +9908,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "21686"
+          "Value": "21807"
         },
         {
           "Name": "Content-Type",
@@ -9916,11 +9916,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"3+Qy1nHzQEED/VR50M+IyL+OvU27kcUwXw0+q6qDOug=\""
+          "Value": "\"81jA4iLNMaUvXLSAcosJ3nxrsd0mk6G57j7jsm/gZj8=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 10:21:09 GMT"
+          "Value": "Tue, 29 Apr 2025 06:58:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9938,7 +9938,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-3+Qy1nHzQEED/VR50M+IyL+OvU27kcUwXw0+q6qDOug="
+          "Value": "sha256-81jA4iLNMaUvXLSAcosJ3nxrsd0mk6G57j7jsm/gZj8="
         }
       ]
     },
@@ -9953,7 +9953,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "34069"
+          "Value": "34581"
         },
         {
           "Name": "Content-Type",
@@ -9961,11 +9961,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Kf1zioyXAa7uijzjF/7Pfxju1eX9ryQ+RVus7dtoeow=\""
+          "Value": "\"jMF1eIW5528PjqwTCMpZW6gWY7XBvtviG30qnZyI85w=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 10:58:16 GMT"
+          "Value": "Tue, 29 Apr 2025 07:03:07 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -9975,18 +9975,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Kf1zioyXAa7uijzjF/7Pfxju1eX9ryQ+RVus7dtoeow="
+          "Value": "sha256-jMF1eIW5528PjqwTCMpZW6gWY7XBvtviG30qnZyI85w="
         }
       ]
     },
     {
       "Route": "_framework/ClientBlog.wasm",
-      "AssetFile": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\dekyl7cpxy-j5dhypw1ql.gz",
+      "AssetFile": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\dekyl7cpxy-cgkg681c1c.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000068460327"
+          "Quality": "0.000067723148"
         }
       ],
       "ResponseHeaders": [
@@ -9996,15 +9996,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "14606"
+          "Value": "14765"
         },
         {
           "Name": "ETag",
-          "Value": "\"4FALTRmRY0bOI/KkfxOOf4obE/ltkkJvn2dDzuiBhdY=\""
+          "Value": "\"HYJHxwwFLECKJF7MPnBvXGctwFRX4j6xXmlu/yW1Prc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 10:21:09 GMT"
+          "Value": "Tue, 29 Apr 2025 06:58:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10024,19 +10024,19 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Kf1zioyXAa7uijzjF/7Pfxju1eX9ryQ+RVus7dtoeow=\""
+          "Value": "W/\"jMF1eIW5528PjqwTCMpZW6gWY7XBvtviG30qnZyI85w=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Kf1zioyXAa7uijzjF/7Pfxju1eX9ryQ+RVus7dtoeow="
+          "Value": "sha256-jMF1eIW5528PjqwTCMpZW6gWY7XBvtviG30qnZyI85w="
         }
       ]
     },
     {
       "Route": "_framework/ClientBlog.wasm.gz",
-      "AssetFile": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\dekyl7cpxy-j5dhypw1ql.gz",
+      "AssetFile": "E:\\WiseWork\\BlogApp\\ClientBlog\\obj\\Debug\\net8.0\\compressed\\dekyl7cpxy-cgkg681c1c.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -10045,7 +10045,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "14606"
+          "Value": "14765"
         },
         {
           "Name": "Content-Type",
@@ -10053,11 +10053,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4FALTRmRY0bOI/KkfxOOf4obE/ltkkJvn2dDzuiBhdY=\""
+          "Value": "\"HYJHxwwFLECKJF7MPnBvXGctwFRX4j6xXmlu/yW1Prc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 28 Apr 2025 10:21:09 GMT"
+          "Value": "Tue, 29 Apr 2025 06:58:29 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -10075,7 +10075,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-4FALTRmRY0bOI/KkfxOOf4obE/ltkkJvn2dDzuiBhdY="
+          "Value": "sha256-HYJHxwwFLECKJF7MPnBvXGctwFRX4j6xXmlu/yW1Prc="
         }
       ]
     },

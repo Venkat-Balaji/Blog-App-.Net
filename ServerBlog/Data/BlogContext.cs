@@ -1,5 +1,6 @@
 ﻿using MongoDB.Driver;
 using ServerBlog.Models;
+using Microsoft.Extensions.Options;
 
 namespace ServerBlog.Data
 {
@@ -7,16 +8,13 @@ namespace ServerBlog.Data
     {
         private readonly IMongoDatabase _database;
 
-        public BlogContext(IConfiguration configuration)
+        public BlogContext(IOptions<MongoDbSettings> settings, IMongoClient client)
         {
-            var client = new MongoClient(configuration.GetConnectionString("MongoDb"));
-            _database = client.GetDatabase("BlogDb"); // Your DB name
+            _database = client.GetDatabase(settings.Value.DatabaseName);
         }
 
         public IMongoCollection<User> Users => _database.GetCollection<User>("Users");
-
         public IMongoCollection<Post> Posts => _database.GetCollection<Post>("Posts");
-
         public IMongoCollection<Comment> Comments => _database.GetCollection<Comment>("Comments");
     }
 }

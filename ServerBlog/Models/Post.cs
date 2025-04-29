@@ -1,5 +1,5 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
 
 namespace ServerBlog.Models
 {
@@ -7,43 +7,18 @@ namespace ServerBlog.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; } = string.Empty;
+        public string Id { get; set; }
 
-        [BsonElement("title")]
-        public string Title { get; set; } = string.Empty;
+        [BsonElement("Title")]
+        public string Title { get; set; }
 
-        [BsonElement("content")]
-        public string Content { get; set; } = string.Empty;
+        [BsonElement("Content")]
+        public string Content { get; set; }
 
-        [BsonElement("userId")]
-        public string UserId { get; set; } = string.Empty; // Link to User
+        [BsonElement("UserId")]
+        public string UserId { get; set; }
 
-        [BsonElement("createdAt")]
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        // Optional field to hold comments when returned via aggregation
+        public List<Comment> Comments { get; set; } = new();
     }
-    public class Comment
-    {
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; } = string.Empty;
-
-        [BsonElement("content")]
-        public string Content { get; set; } = string.Empty;
-
-        [BsonElement("userId")]
-        public string UserId { get; set; } = string.Empty; // Who commented
-
-        [BsonElement("postId")]
-        public string PostId { get; set; } = string.Empty; // On which post
-
-        [BsonElement("createdAt")]
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        [BsonElement("userName")]
-        public string UserName { get; set; } = string.Empty;
-
-        [BsonElement("postTitle")]
-        public string PostTitle { get; set; } = string.Empty;
-
-    }
-
 }

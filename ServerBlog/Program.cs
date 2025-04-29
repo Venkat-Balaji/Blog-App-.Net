@@ -6,14 +6,29 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// MongoDB Settings
+// -------------------- MongoDB Setup --------------------
 builder.Services.Configure<MongoDbSettings>(
     builder.Configuration.GetSection("MongoDbSettings"));
 
-builder.Services.AddSingleton<IMongoClient>(s =>
-    new MongoClient(builder.Configuration.GetValue<string>("MongoDbSettings:ConnectionString")));
+// Register MongoClient
+builder.Services.AddSingleton<IMongoClient>(sp =>
+{
+    var connectionString = builder.Configuration.GetValue<string>("MongoDbSettings:ConnectionString");
+    return new MongoClient(connectionString);
+});
 
-// JWT Authentication
+// Register MongoDatabase
+builder.Services.AddSingleton<IMongoDatabase>(sp =>
+{
+    var client = sp.GetRequiredService<IMongoClient>();
+    var dbName = builder.Configuration.GetValue<string>("MongoDbSettings:DatabaseName");
+    return client.GetDatabase(dbName);
+});
+
+// Register BlogContext
+builder.Services.AddSingleton<BlogContext>();
+
+// -------------------- JWT Authentication --------------------
 var jwtSecret = builder.Configuration["Jwt:Secret"];
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -30,17 +45,16 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-// CORS Policy
+// -------------------- CORS --------------------
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
-        policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader());
 });
 
-// Add Services and Repositories if needed
-// builder.Services.AddScoped<IUserService, UserService>();
-// builder.Services.AddScoped<IPostRepository, PostRepository>();
-
+// -------------------- Core Services --------------------
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -48,6 +62,7 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
+// -------------------- Middleware --------------------
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -55,7 +70,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseRouting();
-
 app.UseCors("AllowAll");
 app.UseAuthentication();
 app.UseAuthorization();

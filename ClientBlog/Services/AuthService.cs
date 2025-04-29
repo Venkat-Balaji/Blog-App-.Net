@@ -14,7 +14,7 @@
 
             public async Task<string> Register(User user)
             {
-                var response = await _httpClient.PostAsJsonAsync("api/Auth/register", user);
+                var response = await _httpClient.PostAsJsonAsync("api/auth/register", user);
                 return response.IsSuccessStatusCode ? "Registration successful." : await response.Content.ReadAsStringAsync();
             }
 

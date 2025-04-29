@@ -2,6 +2,7 @@
 using MongoDB.Driver;
 using ServerBlog.Models;
 using Microsoft.AspNetCore.Authorization;
+using MongoDB.Bson;
 
 namespace ServerBlog.Controllers
 {
@@ -87,60 +88,96 @@ namespace ServerBlog.Controllers
         [HttpGet("with-comments")]
         public async Task<ActionResult<IEnumerable<Post>>> GetPostsWithComments()
         {
-            var posts = await _postsCollection.Aggregate()
+            var bsonDocs = await _postsCollection.Aggregate()
                 .Lookup(
-                    foreignCollectionName: "comments",    // MongoDB "Comments" collection
-                    localField: "Id",                     // Post Id (local field in Posts)
-                    foreignField: "PostId",               // Comment's reference to PostId
-                    @as: "Comments"                       // The new field where comments will be placed
+                    foreignCollectionName: "comments",
+                    localField: "Id",
+                    foreignField: "PostId",
+                    @as: "Comments"
                 )
-                .Project(post => new Post   // Project BsonDocument to Post model
-                {
-                    Id = post["_id"].ToString(),  // MongoDB _id field to Post's Id
-                    Title = post["Title"].ToString(),
-                    Content = post["Content"].ToString(),
-                    UserId = post["UserId"].ToString(),
-                    // Mapping the Comments array into List<Comment> model
-                    Comments = post["Comments"].AsBsonArray.Select(comment => new Comment
-                    {
-                        Id = comment["_id"].ToString(),
-                        Content = comment["content"].ToString(),
-                        UserId = comment["userId"].ToString(),
-                        PostId = comment["postId"].ToString(),
-                        CreatedAt = comment["createdAt"].ToUniversalTime(),  // Convert to DateTime
-                        UserName = comment["userName"].ToString(),
-                        PostTitle = comment["postTitle"].ToString()
-                    }).ToList()  // Convert to List<Comment>
-                })
+                .As<BsonDocument>()
                 .ToListAsync();
+
+            var posts = bsonDocs.Select(doc =>
+            {
+                var post = new Post
+                {
+                    Id = doc.Contains("Id") ? doc["Id"].AsString : doc["_id"].ToString(),
+                    Title = doc.GetValue("Title", "").AsString,
+                    Content = doc.GetValue("Content", "").AsString,
+                    UserId = doc.GetValue("UserId", "").AsString,
+                    Comments = new List<Comment>()
+                };
+
+                if (doc.Contains("Comments") && doc["Comments"].IsBsonArray)
+                {
+                    var commentArray = doc["Comments"].AsBsonArray;
+                    foreach (var commentBson in commentArray)
+                    {
+                        var commentDoc = commentBson.AsBsonDocument;
+
+                        var comment = new Comment
+                        {
+                            Id = commentDoc.Contains("_id") ? commentDoc["_id"].ToString() : "",
+                            Content = commentDoc.GetValue("content", "").AsString,
+                            UserId = commentDoc.GetValue("userId", "").AsString,
+                            PostId = commentDoc.GetValue("postId", "").AsString,
+                            UserName = commentDoc.GetValue("userName", "").AsString,
+                            PostTitle = commentDoc.GetValue("postTitle", "").AsString,
+                            CreatedAt = commentDoc.Contains("createdAt") && commentDoc["createdAt"].IsValidDateTime
+                                ? commentDoc["createdAt"].ToUniversalTime()
+                                : DateTime.MinValue
+                        };
+
+                        post.Comments.Add(comment);
+                    }
+                }
+
+                return post;
+            }).ToList();
 
             return Ok(posts);
         }
+
+
+
+
+
+
 
 
         // Get posts with comment count using MongoDB aggregation
         [HttpGet("with-comment-count")]
         public async Task<ActionResult<IEnumerable<Post>>> GetPostsWithCommentCount()
         {
-            var posts = await _postsCollection.Aggregate()
+            var bsonDocs = await _postsCollection.Aggregate()
                 .Lookup(
-                    foreignCollectionName: "comments",  // MongoDB "Comments" collection
-                    localField: "Id",                   // Post Id
-                    foreignField: "PostId",             // Comment's reference to PostId
-                    @as: "Comments"                     // The new field holding comments
+                    foreignCollectionName: "comments",
+                    localField: "Id",
+                    foreignField: "PostId",
+                    @as: "Comments"
                 )
-                .Group(
-                    g => g.Id,  // Group by Post Id
-                    group => new
-                    {
-                        PostId = group.Key,
-                        PostTitle = group.First().Title,  // Include post title
-                        CommentCount = group.SelectMany(post => post.Comments).Count()  // Count the comments
-                    }
-                )
+                .As<BsonDocument>()
                 .ToListAsync();
+
+            var posts = bsonDocs.Select(doc =>
+            {
+                // Initialize CommentCount at the time of object creation
+                var post = new
+                {
+                    PostId = doc.Contains("Id") ? doc["Id"].AsString : doc["_id"].ToString(),
+                    PostTitle = doc.GetValue("Title", "").AsString,
+                    CommentCount = doc.Contains("Comments") && doc["Comments"].IsBsonArray
+                        ? doc["Comments"].AsBsonArray.Count
+                        : 0
+                };
+
+                return post;
+            }).ToList();
 
             return Ok(posts);
         }
+
+
     }
 }
