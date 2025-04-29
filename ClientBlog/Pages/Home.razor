@@ -1,0 +1,58 @@
+﻿@page "/home"
+@inject HttpClient Http
+@using ClientBlog.Services;
+@inject NavigationManager NavigationManager
+
+@inject SupabaseService Supabase
+
+<h3>Home Feed</h3>
+
+@if (posts == null)
+{
+    <p>Loading...</p>
+}
+else if (!posts.Any())
+{
+    <p>No posts from followed users yet.</p>
+}
+else
+{
+    @foreach (var post in posts)
+    {
+        <div class="card my-2">
+            <div class="card-body">
+                <h5 class="card-title">@post.Title</h5>
+                <p class="card-text">@post.Content</p>
+            </div>
+        </div>
+    }
+}
+
+@code {
+    private List<Post>? posts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var token = Supabase.GetToken();
+        var userId = Supabase.GetUserId();
+
+        if (string.IsNullOrEmpty(token) || string.IsNullOrEmpty(userId))
+        {
+            // Redirect to login if not authenticated
+            NavigationManager.NavigateTo("/login");
+            return;
+        }
+
+        Http.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+
+        // Get posts from followed users
+        posts = await Http.GetFromJsonAsync<List<Post>>($"https://localhost:7195/api/posts/following/{userId}");
+    }
+
+    public class Post
+    {
+        public string Id { get; set; } = string.Empty;
+        public string Title { get; set; } = string.Empty;
+        public string Content { get; set; } = string.Empty;
+    }
+}

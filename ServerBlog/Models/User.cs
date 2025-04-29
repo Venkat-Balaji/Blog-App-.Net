@@ -20,5 +20,7 @@ namespace ServerBlog.Models
 
         [BsonIgnore]
         public string Password { get; set; } = string.Empty; // Only used in memory
+        public List<string> Following { get; set; } = new(); // list of followed user IDs
+
     }
 }

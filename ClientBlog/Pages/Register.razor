@@ -1,51 +1,54 @@
 ﻿@page "/register"
-@using ClientBlog.Services;
+@inject ISnackbar Snackbar
+@inject Supabase.Client SupabaseClient
+@inject NavigationManager Navigation
+@using MudBlazor
+@using ClientBlog.Services
+@inject AuthService AuthService;
+@inject SupabaseService Supabase;
 
-@inject AuthService AuthService
-@inject NavigationManager NavigationManager
 
-<h3 class="text-center text-primary">Register</h3>
+<MudContainer MaxWidth="MaxWidth.Medium" Class="mt-12 d-flex justify-center">
+    <MudCard Style="width:100%; max-width:450px;">
+        <MudCardContent>
+            <MudStack Spacing="2">
+                <MudText Typo="Typo.h5" Align="Align.Center">Create a New Account</MudText>
 
-@if (!string.IsNullOrEmpty(Message))
-{
-    <div class="alert alert-info">@Message</div>
-}
+                <MudTextField Label="Email" @bind-Value="Email" Placeholder="email@example.com" Required="true" />
+                <MudTextField Label="Password" @bind-Value="Password" InputType="InputType.Password" Required="true" />
 
-<EditForm Model="user" OnValidSubmit="HandleRegister">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
+                @if (!string.IsNullOrEmpty(ErrorMessage))
+                {
+                    <MudText Color="Color.Error">@ErrorMessage</MudText>
+                }
 
-    <div class="form-group">
-        <label>Username:</label>
-        <InputText @bind-Value="user.Username" class="form-control" />
-    </div>
+                <MudButton OnClick="RegisterUser" Variant="Variant.Outlined" Color="Color.Secondary" FullWidth="true">Register</MudButton>
 
-    <div class="form-group">
-        <label>Email:</label>
-        <InputText @bind-Value="user.Email" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label>Password:</label>
-        <InputText @bind-Value="user.Password" type="password" class="form-control" />
-    </div>
-
-    <button class="btn btn-success" type="submit">Register</button>
-</EditForm>
+                <MudText Typo="Typo.caption" Align="Align.Center" Class="mt-2">
+                    Already have an account?
+                    <MudLink Href="/login" Color="Color.Primary">Log in</MudLink>
+                </MudText>
+            </MudStack>
+        </MudCardContent>
+    </MudCard>
+</MudContainer>
 
 @code {
-    private ClientBlog.Models.User user = new();
-    private string Message = "";
+    private string Email = string.Empty;
+    private string Password = string.Empty;
+    private string ErrorMessage;
 
-    private async Task HandleRegister()
+    private async Task RegisterUser()
     {
-        var result = await AuthService.Register(user);
-
-        Message = result;
-
-        if (result.Contains("successful"))
+        try
         {
-            NavigationManager.NavigateTo("/login");
+            await SupabaseClient.Auth.SignUp(Email, Password);
+            Snackbar.Add("Registration successful!", Severity.Success);
+            Navigation.NavigateTo("/login");
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Registration failed: {ex.Message}";
         }
     }
 }

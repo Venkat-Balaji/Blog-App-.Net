@@ -1,5 +1,4 @@
 ﻿using Supabase;
-using Supabase.Gotrue;
 
 namespace ClientBlog.Services
 {

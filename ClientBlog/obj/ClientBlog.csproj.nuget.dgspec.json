@@ -51,6 +51,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Blazored.LocalStorage": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
               "version": "[8.0.14, )"
@@ -72,13 +76,13 @@
               "version": "[9.0.3, )",
               "autoReferenced": true
             },
+            "MudBlazor": {
+              "target": "Package",
+              "version": "[8.5.1, )"
+            },
             "Supabase": {
               "target": "Package",
               "version": "[1.1.1, )"
-            },
-            "Supabase.Gotrue": {
-              "target": "Package",
-              "version": "[6.0.3, )"
             }
           },
           "imports": [

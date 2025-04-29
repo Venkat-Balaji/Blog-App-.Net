@@ -1,49 +1,24 @@
 ﻿@inherits LayoutComponentBase
-@inject ClientBlog.Services.SupabaseService Supabase
-@inject NavigationManager Nav
 
+<div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <a class="navbar-brand" href="/">BlogApp</a>
 
-<PageTitle>Client Blog</PageTitle>
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <NavLink class="nav-link" href="/home" Match="NavLinkMatch.All">Home</NavLink>
+            </li>
+            <li class="nav-item">
+                <NavLink class="nav-link" href="/posts">Posts</NavLink>
+            </li>
+            <li class="nav-item">
+                <NavLink class="nav-link" href="/profile">Profile</NavLink>
+            </li>
+        </ul>
+    </nav>
 
-<div class="main-layout">
-    <header>
-        <nav>
-            <h2>📝 Client Blog</h2>
-
-            @if (IsLoggedIn)
-            {
-                <a href="/posts">Posts</a>
-                <button @onclick="Logout">Logout</button>
-            }
-            else
-            {
-                <a href="/login">Login</a>
-                <a href="/register">Register</a>
-            }
-        </nav>
-    </header>
-
-    <main>
+    <div class="main">
         @Body
-    </main>
+    </div>
 </div>
-
-@code {
-    private bool IsLoggedIn => !string.IsNullOrEmpty(Supabase.GetToken());
-
-    // Logout the user
-    private async Task Logout()
-    {
-        await Supabase.LogoutAsync();
-        Nav.NavigateTo("/login", true);
-    }
-
-    // Redirect to login if not logged in
-    protected override void OnInitialized()
-    {
-        if (!IsLoggedIn)
-        {
-            Nav.NavigateTo("/login");
-        }
-    }
-}
+    

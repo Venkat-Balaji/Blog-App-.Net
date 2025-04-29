@@ -179,5 +179,21 @@ namespace ServerBlog.Controllers
         }
 
 
+        [HttpGet("following/{userId}")]
+        public async Task<ActionResult<IEnumerable<Post>>> GetPostsFromFollowedUsers(string userId)
+        {
+            var user = await _usersCollection.Find(u => u.Id == userId).FirstOrDefaultAsync();
+            if (user == null) return NotFound();
+
+            var followedUserIds = user.Following; // List<string> of followed user IDs
+
+            var filter = Builders<Post>.Filter.In(p => p.UserId, followedUserIds);
+            var posts = await _postsCollection.Find(filter).ToListAsync();
+
+            return Ok(posts);
+        }
+
+
+
     }
 }

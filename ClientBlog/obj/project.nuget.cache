@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "TpvBzLgSqTQ=",
+  "dgSpecHash": "hlKt6p44YTw=",
   "success": true,
   "projectFilePath": "E:\\WiseWork\\BlogApp\\ClientBlog\\ClientBlog.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\HAI\\.nuget\\packages\\blazored.localstorage\\4.5.0\\blazored.localstorage.4.5.0.nupkg.sha512",
     "C:\\Users\\HAI\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.14\\microsoft.aspnetcore.authorization.8.0.14.nupkg.sha512",
     "C:\\Users\\HAI\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.14\\microsoft.aspnetcore.components.8.0.14.nupkg.sha512",
     "C:\\Users\\HAI\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\8.0.14\\microsoft.aspnetcore.components.analyzers.8.0.14.nupkg.sha512",
@@ -22,6 +23,8 @@
     "C:\\Users\\HAI\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\8.0.0\\microsoft.extensions.fileproviders.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\HAI\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\8.0.0\\microsoft.extensions.fileproviders.physical.8.0.0.nupkg.sha512",
     "C:\\Users\\HAI\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\8.0.0\\microsoft.extensions.filesystemglobbing.8.0.0.nupkg.sha512",
+    "C:\\Users\\HAI\\.nuget\\packages\\microsoft.extensions.localization\\8.0.12\\microsoft.extensions.localization.8.0.12.nupkg.sha512",
+    "C:\\Users\\HAI\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\8.0.12\\microsoft.extensions.localization.abstractions.8.0.12.nupkg.sha512",
     "C:\\Users\\HAI\\.nuget\\packages\\microsoft.extensions.logging\\8.0.1\\microsoft.extensions.logging.8.0.1.nupkg.sha512",
     "C:\\Users\\HAI\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.3\\microsoft.extensions.logging.abstractions.8.0.3.nupkg.sha512",
     "C:\\Users\\HAI\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
@@ -36,6 +39,7 @@
     "C:\\Users\\HAI\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.14\\microsoft.net.illink.tasks.8.0.14.nupkg.sha512",
     "C:\\Users\\HAI\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\9.0.3\\microsoft.net.sdk.webassembly.pack.9.0.3.nupkg.sha512",
     "C:\\Users\\HAI\\.nuget\\packages\\mimemapping\\3.0.1\\mimemapping.3.0.1.nupkg.sha512",
+    "C:\\Users\\HAI\\.nuget\\packages\\mudblazor\\8.5.1\\mudblazor.8.5.1.nupkg.sha512",
     "C:\\Users\\HAI\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\HAI\\.nuget\\packages\\supabase\\1.1.1\\supabase.1.1.1.nupkg.sha512",
     "C:\\Users\\HAI\\.nuget\\packages\\supabase.core\\1.0.0\\supabase.core.1.0.0.nupkg.sha512",
